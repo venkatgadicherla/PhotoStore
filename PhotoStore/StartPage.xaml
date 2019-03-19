@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="PhotoStore.StartPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoStore"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="750">
+    <StackPanel Height="750" Orientation="Horizontal">
+        <local:CameraControl x:Name="controlCamera" imgSource="Assets/Images/CameraImageSmall.png"  tblIconName1="Camera" Height="275" Margin="400,238,129,237" Width="214" Tapped="controlCamera_Tapped" />
+        <local:CameraControl x:Name="controlGallery" imgSource="Assets/Images/folderImg.png"  tblIconName1="Open Photos" Height="275" Margin="44,238,129,237" Width="232" Tapped="controlGallery_Tapped"  />
+        <local:CameraControl x:Name="controlBgProcess"  imgSource="Assets/Images/bgblack.png"  tblIconName1="BgProcess" Height="275" Margin="44,238,129,237" Width="256" Tapped="controlBgProcess_Tapped"  />
+       
+
+
+    </StackPanel>
+</Page>

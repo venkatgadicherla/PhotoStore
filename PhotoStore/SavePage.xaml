@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="PhotoStore.SavePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PhotoStore"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Style="{StaticResource ChildPages}">
+
+    <StackPanel>
+        <TextBlock Name="tblPageHeading" Text="Save Photos" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource HeadingStyle}" />
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel x:Name="panelSavePhoto"  Margin="705,100,641,2" CornerRadius="5" Height="250"  Orientation="Horizontal">
+                <local:CameraControl x:Name="iconSelectPhotos" imgSource="Assets/Images/albumImg1.png" tblIconName1="Select Photos"  Height="Auto" Width="200" Margin="0,-4,0,3" Tapped="iconSelectPhotos_Tapped"/>
+                <local:CameraControl x:Name="iconSave" imgSource="Assets/Images/SaveWhiteIcon.png"  Margin="100,0,0,2" tblIconName1="  Save Photos"  HorizontalAlignment="Left" Width="200" Tapped="iconSavePhoto_Tapped"/>
+
+            </StackPanel>
+            <local:NavigationControl HorizontalAlignment="Left" Margin="705,50,0,50" VerticalAlignment="Top" Height="150" Width="440" Tapped="NavigationControl_Tapped" />
+        </StackPanel>
+    </StackPanel>
+</Page>
