@@ -13,7 +13,7 @@
                 <local:CameraControl imgSource="Assets/Images/NewFolder.png" tblIconName1="Create New Album" Margin="0,0,0,0" HorizontalAlignment="Left" Width="466"/>
 
             </StackPanel>
-            <local:NavigationControl HorizontalAlignment="Left" Margin="705,50,0,50" VerticalAlignment="Top" Height="150" Width="440" Tapped="NavigationControl_Tapped" />
+            <local:NavigationControl   HorizontalAlignment="Left" Margin="705,50,0,50" VerticalAlignment="Top" Height="150" Width="440" Tapped="NavigationControl_Tapped" />
         </StackPanel>
 
 

@@ -46,7 +46,7 @@ namespace PhotoStore
                     t.Value.Unregister(true);
                 }
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
 
                 var expmsg = new MessageDialog(exp.ToString());
@@ -80,21 +80,27 @@ namespace PhotoStore
         private async void controlCamera_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //This process is triggered when the camera control is triggered
-           
+
             CameraCaptureUI captureUI = new CameraCaptureUI();
             captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
-            captureUI.PhotoSettings.CroppedSizeInPixels = new Size(10, 10);
+            captureUI.PhotoSettings.CroppedSizeInPixels = new Size(100, 100);
 
             try
             {
                 StorageFile photo = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);//The camera Ui is triggered in this line and the output is stored
                 if (photo != null)//If the camera ouput is not null then the output is stored in the system in .bmp format
                 {
-                    StorageFolder destinationFolder =                                       //A folder is created to store the pictures
-                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("PhotoStoreAlbum",
-                    CreationCollisionOption.OpenIfExists);
+                    //var currentFolder = ApplicationData.Current.LocalFolder;
+                    //var destinationFolder = await currentFolder.CreateFolderAsync("destinationFolder", CreationCollisionOption.OpenIfExists);
+                    ////var expmsg = new MessageDialog(currentFolder.ToString());
+                    ////await expmsg.ShowAsync();
+                    string PhotoName = "cam" + ".jpg";// A name for the picture file is created in this code
 
-                    String PhotoName = System.DateTime.UtcNow.ToString() + ".bmp";// A name for the picture file is created in this code
+                    //await photo.CopyAsync(destinationFolder, PhotoName, NameCollisionOption.ReplaceExisting);
+                    //await photo.DeleteAsync();
+                    StorageFolder destinationFolder =
+                    await ApplicationData.Current.LocalFolder.CreateFolderAsync("ProfilePhotoFolder",
+                    CreationCollisionOption.OpenIfExists);
 
                     await photo.CopyAsync(destinationFolder, PhotoName, NameCollisionOption.ReplaceExisting);
                     await photo.DeleteAsync();
@@ -107,7 +113,7 @@ namespace PhotoStore
                     return;
                 }
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 var expmsg = new MessageDialog(exp.ToString());
                 await expmsg.ShowAsync();
@@ -121,6 +127,6 @@ namespace PhotoStore
             Frame.Navigate(typeof(PhotoPage));
         }
 
-      
+
     }
 }

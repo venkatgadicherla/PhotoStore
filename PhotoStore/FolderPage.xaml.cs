@@ -33,6 +33,7 @@ namespace PhotoStore
         {
             // The follwing code is executed when the new aln=bum button is pressed.
             //A content dialog is invoked with a text box , a ok button and a cancel button
+            //
             var albumNameDialog = new ContentDialog();// This content dialog is used to take input for the album name.
             albumNameDialog.Width = 450;
             StackPanel dialogPanel = new StackPanel();//This Stackpanel provides the content for the content dialog
@@ -65,7 +66,7 @@ namespace PhotoStore
           
             if (!String.IsNullOrWhiteSpace(albumName))//When the albumName is entered  the album is created
             {
-                StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\Users\user\Pictures");// The initial folder is set to pictures folder
+                StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\Users\venka\OneDrive\Pictures");// The initial folder is set to pictures folder
 
                 bool FileExists = false;
 
